@@ -16,12 +16,11 @@
         }
         .page-container {
             position: relative;
-            width: 1440px;
-            height: 1024px;
+            width: 100%;
+            min-height: 100vh;
             background: #D2D9DF;
-            margin: 0 auto;
-            overflow: hidden;
-            
+            overflow-x: hidden;
+            overflow-y: auto;
         }
         .group-1 {
             position: absolute;
@@ -35,7 +34,7 @@
             width: 259px;
             height: 160px;
             left: 0;
-            top: 0;
+            top: 5px;
             background: #739EBE;
             border-radius: 31.0408px;
         }
@@ -281,7 +280,7 @@
             color: #000000;
         }
         .upload-description {
-              position: absolute;
+            position: absolute;
             width: 177px;
             height: 21px;
             left: 660px;
@@ -346,11 +345,20 @@
     width: 100%;
     border-radius: 60%;
 }
+.logo-link {
+        width: 75px;
+        height: 75px;
+    }
 #ai{
-    height: 100%;
-    width: 100%;
-    border-radius: 30%;
-    align-items: center;
+    position: absolute;
+    width: 450px; 
+    height: 230px; 
+    left: -100px; 
+    top: -35px; 
+    background: transparent; 
+    border-radius: 0;
+    overflow: visible; /* Allow logo to overflow if needed */
+    z-index: 1000;
 }
 #graph{
     height: 85%;
@@ -410,7 +418,7 @@
 <body>
     <div class="page-container">
         <div class="group-1">
-            <div class="rectangle-8"><img src="{{ url_for('static', filename='images/Ai.png') }}" id="ai" alt="AI"></div>
+            <div class="rectangle-8"><a href="{{ url_for('home') }}" class="logo-link"><img src="{{ url_for('static', filename='images/HealthHiveLogo.png') }}" id="ai" alt="AI"></a></div>
             <div class="rectangle-9"><img src="{{ url_for('static', filename='images/AI.jpg') }}" id="AI" alt="AI"></div>
             <div class="rectangle-10"></div>
         </div>
